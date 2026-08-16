@@ -1,4 +1,4 @@
-// const API_BASE = process.env.NEXT_PUBLIC_API_URL;
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 export type Helper = {
   id: number | string;
@@ -41,9 +41,7 @@ export async function matchHelper(requirementText: string, audio?: File | null):
   formData.append("requirementText", requirementText);
   if (audio) formData.append("audio", audio, audio.name);
 
-  // const response = await fetch(`${API_BASE}/api/match-helper`, {
-  const response = await fetch(`/api/match-helper`, {
-
+  const response = await fetch(`${API_BASE}/api/match-helper`, {
     method: "POST",
     body: formData,
   });
