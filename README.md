@@ -1,145 +1,36 @@
-# Smart Match Summary & Audio Prompt Engine
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Overview
+## Getting Started
 
-This project is a mini full-stack application that matches an employer's requirement with suitable helper profiles using AI and MySQL.
-
-The application accepts an employer's requirement as text or audio, extracts structured information using the Gemini API, searches matching helper profiles from a MySQL database, generates an AI-based match summary, and displays the results in a React frontend.
-
-## Tech Stack
-
-### Frontend
-
-* React (Vite)
-* Axios
-
-### Backend
-
-* Node.js
-* Express.js
-* Gemini API
-* Multer
-
-### Database
-
-* MySQL
-
----
-
-## Features
-
-* Enter employer requirement as text.
-* Upload an audio file.
-* AI extracts structured tags such as:
-
-  * Skill
-  * Sub Skill
-  * Timing
-  * Urgency
-* Searches matching helpers from MySQL.
-* Generates a two-sentence AI summary explaining why each helper is a good match.
-* Displays up to five matching helpers.
-
----
-
-## Project Structure
-
-```
-backend/
-frontend/
-sql/
-README.md
-```
-
----
-
-## Installation
-
-### Clone Repository
-
-```bash
-git clone <repository-url>
-cd smart-match-assignment
-```
-
-### Backend
-
-```bash
-cd backend
-npm install
-```
-
-Create a `.env` file:
-
-```env
-PORT=5000
-
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=helper4u
-
-GEMINI_API_KEY=your_api_key
-GEMINI_MODEL=gemini-2.5-flash
-```
-
-Start the backend:
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Frontend
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
----
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Database
+## Learn More
 
-Import the SQL file located in the `sql` folder into MySQL before running the application.
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## API Endpoint
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### POST `/api/match-helper`
+## Deploy on Vercel
 
-Accepts:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-* Employer requirement text
-* Optional audio file
-
-Returns:
-
-* Extracted AI tags
-* Matching helper profiles
-* AI-generated match summaries
-
----
-
-## AI Workflow
-
-1. Employer enters text or uploads audio.
-2. Gemini extracts structured criteria.
-3. Backend searches MySQL for matching helpers.
-4. Gemini generates a short match justification.
-5. Results are returned to the frontend.
-
----
-
-## Notes
-
-* Uses parameterized SQL queries to prevent SQL injection.
-* Uses asynchronous API calls with proper error handling.
-* API keys and database credentials are stored in environment variables.
-
----
-
-## Author
-
-**Vaibhav Gaikwad**
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
